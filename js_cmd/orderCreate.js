@@ -199,7 +199,28 @@ define(function(require,exports,module){
                 this.timeScroller=new iScroll($eles.timeListCon[0]);
 
                 this.getDeliveryTime=function(){
-                    var now=Date.now(),
+                    var resData;
+                    $.ajax({
+                        url:APP.urls.deliveryTime,
+                        type:"POST",
+                        dataType:"json",
+                        async:false,
+                        data:{shopId : resId},
+                        success:function(res){
+                            var data=res.Data;
+                            if(!res.Status==0){
+                                tip(res.Message, { classes: "otip", t: 2000 });
+                                return "";
+                            }
+                            if(!data){
+                                return "";
+                            }
+                            resData = data;
+                        }
+                    });
+                    return resData;
+
+                    /*var now=Date.now(),
                         today=parseInt(now/86400000)*86400000-8*60*60*1000,
                         nowTime=now-today,
                         fromTime=9.5*60*60*1000,
@@ -245,9 +266,9 @@ define(function(require,exports,module){
                     if((new Date(forDay)).getDay()!==0&&(new Date(forDay)).getDay()!==6){
                         forArr=this.getTimeList(forDay,fromTime,endTime);
                     }
-
+                    console.log(JSON.stringify([fstArr,sedArr,thrArr,forArr]));
                     return [fstArr,sedArr,thrArr,forArr];
-
+                    */
                 }
 
                 this.getTimeList=function(base,sTime,eTime){
@@ -639,14 +660,20 @@ define(function(require,exports,module){
                         str1="后天";
                         break;
                 }
-                if(len>0){
-                    str1+="("+daysArr[(new Date(v[0].sTime)).getDay()]+")";
+                if(one){
+                    str1=one.ShowName;
                     tabsStr+='<li index="'+index+'">'+str1+'</li>';
                     str2+='<ul class="time_list" data-index="'+index+'">';
-                    [].forEach.call(one,function(item,index){
+                    var baseDate = one.Date.substr(0,10).split('/');
+                    var baseTimestamp = new Date(baseDate[2],baseDate[0]-1,baseDate[1]).getTime();
+                    [].forEach.call(one.EffectivePeriod,function(item,index){
+                        item.sTime = baseTimestamp + item.StartTime;
+                        item.eTime = baseTimestamp + item.EndTime;
+                        var tiStr = eles.formatTimeObj({ sTime:item.sTime,eTime:item.eTime}).timeStr;
+                        item.timeStr = tiStr;
                         str2+='<li>\
                                 <label>\
-                                <span>'+item.timeStr+'</span>\
+                                <span>'+tiStr+'</span>\
                                     <input type="radio" class="hidden" name="timeSelect" value='+JSON.stringify(item)+'>\
                                 <i class="icon icon_circle"></i>\
                                 </label>\
@@ -660,14 +687,17 @@ define(function(require,exports,module){
             })
 
             $eles.timeTabs.html(tabsStr);
+            $eles.timeTabScroller= new iScroll($eles.timeTabs.parent()[0],{vScrollbar:false});
+            $eles.timeTabScroller.refresh();
             $eles.timeListCon.find(".wrap_time_list").html(timesStr);
 
             $eles.timeTabs.find("li").eq(0).trigger("click");
 
             var input0=$eles.timeListCon.find("input").eq(0);
             input0.prop("checked",true);
-            eles.currTime=JSON.parse(input0.val());
-
+            if(input0.val()){
+                eles.currTime=JSON.parse(input0.val());
+            }
         }
 
         function initEvent(){

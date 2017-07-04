@@ -1,0 +1,127 @@
+{
+  "Status": 0,
+  "Message": "success",
+  "Data": [
+    {
+      "ExtensionData": {},
+      "Date": "06/06/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        },
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "明天(周二)",
+      "WeekFlag": 2
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/08/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周四",
+      "WeekFlag": 4
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/09/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周五",
+      "WeekFlag": 5
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/11/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周日",
+      "WeekFlag": 7
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/11/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周日",
+      "WeekFlag": 7
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/11/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周日",
+      "WeekFlag": 7
+    },
+    {
+      "ExtensionData": {},
+      "Date": "06/11/2017 00:00:00.000",
+      "EffectivePeriod": [
+        {
+          "ExtensionData": {},
+          "EndTime": 61200000,
+          "StartTime": 36900000
+        }
+      ],
+      "ShowName": "周日",
+      "WeekFlag": 7
+    }
+  ]
+}
