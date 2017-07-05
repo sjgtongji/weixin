@@ -11,6 +11,7 @@
     <title>商品详情</title>
     <link rel="stylesheet" href="css/commons.css">
     <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <!--<script src="lib/vconsole.min.js"></script>-->
     <script src="lib_cmd/sea.js"></script>
     <script>
@@ -38,13 +39,26 @@
                 ]
             });
             seajs.use("js_cmd/goods");
+            seajs.use("js_cmd/swiper");
         })(location.href.match(/de(\-\d+)bug/));
     </script>
 </head>
 <body>
 <div class="container goods">
     <header>
-        <img style="background-image: url(images/banner1.jpg)" alt="">
+        <!--<img style="background-image: url(images/banner1.jpg)" alt="">-->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide swiper_img"></div>
+                <div class="swiper-slide swiper_img"></div>
+                <div class="swiper-slide swiper_img"></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
     </header>
     <section class="wrap_content">
         <div class="wrap_content">

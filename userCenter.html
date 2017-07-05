@@ -11,12 +11,40 @@
     <title>商品详情</title>
     <link rel="stylesheet" href="css/commons.css">
     <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <!--<script src="lib/vconsole.min.js"></script>-->
+    <script src="lib_cmd/sea.js"></script>
+
+    <script>
+        (function(l){
+//                l=l||[,"-min"];
+            seajs.config({
+                base:"./",
+//                    base:"./build",
+                map: [
+                    [ ".js", (l&&l[1]||"")+".js?v=20141027"]
+                ]
+            });
+            seajs.use("js_cmd/swiper");
+        })(location.href.match(/de(\-\d+)bug/));
+    </script>
 </head>
 <body>
 <div class="container user_center">
     <header>
-        <div class="wrap_img"></div>
+        <!--<div class="wrap_img"></div>-->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide swiper_img"></div>
+                <div class="swiper-slide swiper_img"></div>
+                <div class="swiper-slide swiper_img"></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
     </header>
     <section class="wrap_content">
         <ul>
