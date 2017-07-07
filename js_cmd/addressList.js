@@ -129,6 +129,36 @@ define(function (require, exports, module) {
                             })
                         }
                     },
+                    deleteAddress:{
+                        set:function(index){
+                            var address=addressList[index];
+                            var deleteConfirm = confirm("确定删除地址吗？<br/>"+address.address+address.houseNumber,{
+                                callBack:function(evt){
+                                    var that = this,ele = null;
+                                    if(evt && (ele = evt.target) && ("BUTTON" == ele.tagName) && $(ele).hasClass("_btn_confirm")){
+                                        var _l=window.loading();
+                                        $.ajax({
+                                            url:APP.urls.deleteAddress,
+                                            type:"POST",
+                                            dataType:"json",
+                                            data:{Id:address.id},
+                                            success:function(res){
+                                                _l.destroy();
+                                                var data=res.Data;
+                                                if(res.Status!==0){
+                                                    tip('删除地址失败，请稍后再试。', { classes: "otip", t: 2000 });
+                                                    return null
+                                                }
+                                                eles.addressList=data;
+                                            }
+                                        })
+                                        that.close();
+                                    }
+                                    return that;
+                                }
+                            });
+                        }
+                    },
                     resultList:{
                         set:function(v){
                             resultList=v;
@@ -178,6 +208,7 @@ define(function (require, exports, module) {
                                     <p><label class="tag">{label}</label>{address}{houseNumber}</p>\
                                 </a>\
                                 <i class="icon icon_edit" data-index="{index}"></i>\
+                                <i class="icon icon_delete" data-index="{index}"></i>\
                             </li>',
                         html="";
                     html=iTemplate.makeList(tpl,addressList,function(index,v){
@@ -375,6 +406,13 @@ define(function (require, exports, module) {
                 var self=$(this),
                     index=self.attr("data-index");
                 eles.editAddress=index;
+                return false;
+            })
+
+            $eles.addressList.on("click",".icon_delete",function(){
+                var self=$(this),
+                    index=self.attr("data-index");
+                eles.deleteAddress=index;
                 return false;
             })
 

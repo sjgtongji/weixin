@@ -175,7 +175,7 @@ define(function(require, exports, module){
 				<div class="widget_footer">\
 					<ul>\
 						<li><button type="button" val="0">取消</button></li>\
-						<li><button type="button" val="1">确定</button></li>\
+						<li><button type="button" class="_btn_confirm" val="1">确定</button></li>\
 					</ul>\
 				</div>\
 			</div>';
