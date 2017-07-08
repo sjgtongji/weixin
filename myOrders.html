@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="css/commons.css">
     <link rel="stylesheet" href="css/shop.css">
     <!--<script src="lib/vconsole.min.js"></script>-->
+    <script src="lib_cmd/sea.js"></script>
+    <script>
+        var APP={
+            shopId:"",
+            urls:{
+                deleteOrder:"data/deleteOrder.json"
+            }
+        }
+    </script>
+    <script>
+        (function(l){
+//                l=l||[,"-min"];
+            seajs.config({
+                base:"./",
+//                    base:"./build",
+                map: [
+                    [ ".js", (l&&l[1]||"")+".js?v=20141027"]
+                ]
+            });
+            seajs.use("js_cmd/myOrders");
+        })(location.href.match(/de(\-\d+)bug/));
+    </script>
 </head>
 <body>
 <div class="container orders">
@@ -28,6 +50,7 @@
                         <div><span>类别</span><span>已支付</span></div>
                     </div>
                 </a>
+                <div class="icon icon_delete"><span hidden>123</span></div>
             </li>
             <li>
                 <a href="">
@@ -38,17 +61,19 @@
                         <div><span>类别</span><span>已支付</span></div>
                     </div>
                 </a>
+                <div class="icon icon_delete"><span hidden>456</span></div>
             </li>
             <li>
-            <a href="">
-                <div class="wrap_img" style="background-image: url(images/good.png)"></div>
-                <div class="wrap_info">
-                    <h2>BuzzTime Coffee(吴江路店)</h2>
-                    <p>订单时间：15:00</p>
-                    <div><span>类别</span><span>已支付</span></div>
-                </div>
-            </a>
-        </li>
+                <a href="">
+                    <div class="wrap_img" style="background-image: url(images/good.png)"></div>
+                    <div class="wrap_info">
+                        <h2>BuzzTime Coffee(吴江路店)</h2>
+                        <p>订单时间：15:00</p>
+                        <div><span>类别</span><span>已支付</span></div>
+                    </div>
+                </a>
+                <div class="icon icon_delete"><span hidden>789</span></div>
+            </li>
         </ul>
     </section>
     <footer></footer>

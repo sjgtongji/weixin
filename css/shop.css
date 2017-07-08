@@ -1332,7 +1332,7 @@ header .swiper_img{
 }
 .order_list li{
     padding:15px 0 15px 15px;
-
+    position:relative;
     background-color: #fff;
     margin-bottom: 14px;
     border-width: 0 0 1px 0;
@@ -1375,6 +1375,12 @@ header .swiper_img{
     color: #ffdd30;
     display: -webkit-flex;
     -webkit-justify-content: space-between;
+}
+.order_list .icon_delete{
+    background-position: 0 -160px;
+    position: absolute;
+    top: 5px;
+    right: 0;
 }
 
 /********************订单详情********************/
