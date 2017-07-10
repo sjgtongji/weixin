@@ -12,7 +12,8 @@
       "longitude":"23.00",
       "latitude":"23.00",
       "houseNumber":"东方路135",
-      "label":"家"
+      "label":"家",
+      "isRangeOut":true
     },
     {
       "id":12121,
@@ -24,7 +25,8 @@
       "longitude":"23.00",
       "latitude":"23.00",
       "houseNumber":"东方路135",
-      "label":"家"
+      "label":"家",
+      "isRangeOut":false
     },
     {
       "id":12121,
@@ -36,7 +38,8 @@
       "longitude":"23.00",
       "latitude":"23.00",
       "houseNumber":"东方路135",
-      "label":"家"
+      "label":"家",
+      "isRangeOut":false
     },
     {
       "id":12121,
@@ -48,7 +51,8 @@
       "longitude":"23.00",
       "latitude":"23.00",
       "houseNumber":"东方路135",
-      "label":"家"
+      "label":"家",
+      "isRangeOut":true
     },
     {
       "id":12121,
@@ -60,7 +64,8 @@
       "longitude":"23.00",
       "latitude":"23.00",
       "houseNumber":"东方路135",
-      "label":"家"
+      "label":"家",
+      "isRangeOut":false
     }
   ]
 }

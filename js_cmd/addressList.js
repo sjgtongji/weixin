@@ -221,10 +221,21 @@ define(function (require, exports, module) {
 
                     $eles.addressList.html(html);
 
+                    for(var i in addressList){
+                        var ii = parseInt(i)+1;
+                        if(addressList[i].isRangeOut){
+                            $eles.addressList.find("li:nth-child("+ii+")").addClass("address_disable");
+                        }
+                    }
+
                 }
 
                 this.selectAddress=function(index){
                     var address=addressList[index];
+                    if(address.isRangeOut){
+                        tip('该地址不在范围内，请选择其他地址。', { classes: "otip", t: 2000 });
+                        return;
+                    }
                     setCookie("last_locaton",JSON.stringify(address));
                     setCookie("get_address" , true);
                     if(APP.isFromOrder){
@@ -370,6 +381,13 @@ define(function (require, exports, module) {
     })
 
     function _initPage() {
+        var resInfo = sessionStorage.getItem("res_info");
+        var resId = null;
+        if(resInfo){
+            resInfo=JSON.parse(resInfo);
+            resId = resInfo.resId;
+        }
+        console.log(resId);
 
         var _l=window.loading();
 
@@ -379,7 +397,7 @@ define(function (require, exports, module) {
             url:APP.urls.getAddressList,
             type:"POST",
             dataType:"json",
-            data:{},
+            data:{ResId:resId},
             success:function(res){
                 _l.destroy();
                 if(res.Status==0){

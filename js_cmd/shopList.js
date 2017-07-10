@@ -135,6 +135,9 @@ define(function (require, exports, module) {
             eles.currPosi=JSON.parse(location);
         }
 
+        //清空店铺信息缓存
+        sessionStorage.setItem("res_info","");
+
         initEvent();
         function initEvent(){
             /*$eles.locationSelect.on("click",function(){
