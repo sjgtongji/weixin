@@ -1233,6 +1233,10 @@ header .swiper_img{
     -o-border-image: url(../imgs/border.png) 2 stretch;
     border-image: url(../imgs/border.png) 2 stretch;
 }
+.current_points{
+    padding:9px 0 0 19px;
+}
+
 
 /****************************订单结果页******************************/
 .order_result{
