@@ -145,11 +145,12 @@ define(function (require, exports, module) {
                                             success:function(res){
                                                 _l.destroy();
                                                 var data=res.Data;
-                                                if(res.Status!==0){
+                                                if(res.Status!==0||!res.Data){
                                                     tip('删除地址失败，请稍后再试。', { classes: "otip", t: 2000 });
                                                     return null
                                                 }
-                                                eles.addressList=data;
+                                                location.reload();
+                                                //eles.addressList=data;
                                             }
                                         })
                                         that.close();
