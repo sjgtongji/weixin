@@ -1179,6 +1179,11 @@ header .swiper_img{
 #timeSelect .wrap_times .time_list>li i{
     float: right;
 }
+#timeSelect .wrap_times .time_list .timeList_disable{
+    filter: alpha(Opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
 
 
 #couponSelect .mask{

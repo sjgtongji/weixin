@@ -671,13 +671,24 @@ define(function(require,exports,module){
                         item.eTime = baseTimestamp + item.EndTime;
                         var tiStr = eles.formatTimeObj({ sTime:item.sTime,eTime:item.eTime}).timeStr;
                         item.timeStr = tiStr;
-                        str2+='<li>\
-                                <label>\
-                                <span>'+tiStr+'</span>\
-                                    <input type="radio" class="hidden" name="timeSelect" value='+JSON.stringify(item)+'>\
-                                <i class="icon icon_circle"></i>\
-                                </label>\
-                                </li>';
+                        if(false == item.Available){
+                            tiStr += " (该时间段订单已满)";
+                            str2+='<li>\
+                                    <label class="timeList_disable">\
+                                    <span>'+tiStr+'</span>\
+                                        <input disabled type="radio" class="hidden" name="timeSelect" value='+JSON.stringify(item)+'>\
+                                    <i class="icon icon_circle"></i>\
+                                    </label>\
+                                    </li>';
+                        } else {
+                            str2+='<li>\
+                                    <label>\
+                                    <span>'+tiStr+'</span>\
+                                        <input type="radio" class="hidden" name="timeSelect" value='+JSON.stringify(item)+'>\
+                                    <i class="icon icon_circle"></i>\
+                                    </label>\
+                                    </li>';
+                        }
 
                     })
                     str2+='</ul>';
@@ -693,7 +704,7 @@ define(function(require,exports,module){
 
             $eles.timeTabs.find("li").eq(0).trigger("click");
 
-            var input0=$eles.timeListCon.find("input").eq(0);
+            var input0=$eles.timeListCon.find("input:enabled").eq(0);
             input0.prop("checked",true);
             if(input0.val()){
                 eles.currTime=JSON.parse(input0.val());

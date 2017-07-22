@@ -9,7 +9,8 @@
         {
           "ExtensionData": {},
           "EndTime": 61200000,
-          "StartTime": 36900000
+          "StartTime": 36900000,
+          "Available":false
         },
         {
           "ExtensionData": {},
@@ -24,7 +25,8 @@
         {
           "ExtensionData": {},
           "EndTime": 61200000,
-          "StartTime": 36900000
+          "StartTime": 36900000,
+          "Available":false
         },
         {
           "ExtensionData": {},
