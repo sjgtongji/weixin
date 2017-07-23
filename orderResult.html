@@ -33,8 +33,8 @@
         function initShare() {
             wx.onMenuShareTimeline({
                 title: 'BuzztimeCoffee', //@常老板，待定，分享标题
-                link: 'http://waimaitest.buzztimecoffee.com/AppWapCoffee/ShopList', //@常老板，待定，分享链接
-                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg', //@常老板，待定，分享图标
+                link:  "http://"+window.location.host+'/AppWapCoffee/ShopList', //@常老板，待定，分享链接
+                imgUrl:  "http://"+window.location.host+'/AppWapCoffee/images/shareIcon.png', //@常老板，待定，分享图标
                 trigger: function (res) {
                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                     // alert('用户点击分享到朋友圈');
@@ -53,8 +53,8 @@
             wx.onMenuShareAppMessage({
                 title: 'BuzztimeCoffee', //@常老板，待定，分享标题
                 desc: '我刚刚在BuzztimeCoffee下了个订单', //@常老板，待定，分享描述
-                link: 'http://waimaitest.buzztimecoffee.com/AppWapCoffee/ShopList', //@常老板，待定，分享链接
-                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg', //@常老板，待定，分享图标
+                link: "http://"+window.location.host+'/AppWapCoffee/ShopList', //@常老板，待定，分享链接
+                imgUrl: "http://"+window.location.host+'/AppWapCoffee/images/shareIcon.png', //@常老板，待定，分享图标
                 trigger: function (res) {
                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                     //alert('用户点击发送给朋友');
