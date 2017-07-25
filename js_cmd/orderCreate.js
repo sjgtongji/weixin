@@ -672,7 +672,7 @@ define(function(require,exports,module){
                         var tiStr = eles.formatTimeObj({ sTime:item.sTime,eTime:item.eTime}).timeStr;
                         item.timeStr = tiStr;
                         if(false == item.Available){
-                            tiStr += " (该时间段订单已满)";
+                            tiStr += " (订单已满)";
                             str2+='<li>\
                                     <label class="timeList_disable">\
                                     <span>'+tiStr+'</span>\
@@ -702,9 +702,10 @@ define(function(require,exports,module){
             $eles.timeTabScroller.refresh();
             $eles.timeListCon.find(".wrap_time_list").html(timesStr);
 
-            $eles.timeTabs.find("li").eq(0).trigger("click");
-
             var input0=$eles.timeListCon.find("input:enabled").eq(0);
+            var idxInput0 = input0.parents("ul").index();
+            $eles.timeTabs.find("li").eq(idxInput0).trigger("click");
+
             input0.prop("checked",true);
             if(input0.val()){
                 eles.currTime=JSON.parse(input0.val());
