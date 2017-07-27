@@ -1254,54 +1254,64 @@ header .swiper_img{
     padding:10px 0;
 }
 .order_result .wrap_tips .wrap_img{
-    width:80px;
-    height: 80px;
+    width:200px;
+    height: 180px;
     -webkit-background-size:80px;
-    background-size:80px;
+    background-size:158px;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url(../imgs/order_success.png);
+    margin-bottom: 36px;
 }
 .order_result .wrap_tips h2{
-    font-size:18px;
+    font-size:19px;
     color:#000000;
     text-align:center;
     font-weight: normal;
+    position: absolute;
+    top: 180px;
 }
 .order_result .wrap_btns{
     display: -webkit-flex;
     -webkit-justify-content: center;
 }
 .order_result .wrap_btns>div{
-    font-size:18px;
-    color:#9b9b9b;
+    font-size:16px;
+    color:#757f8f;
     text-align:center;
-    width:105px;
-    border:1px solid #d8d8d8;
-    line-height: 34px;
-    border-radius: 6px;
+    width:80px;
+    border:1px solid #757f8f;
+    line-height: 32px;
+    border-radius: 4px;
 }
 .order_result .wrap_btns>div:nth-child(1){
-    margin-right:17px;
+    margin-right:27px;
 }
 .order_result .wrap_btns>div:nth-child(2){
-    margin-right:17px;
+    margin-right:27px;
+}
+.order_result .wrap_btns>div:nth-child(3){
+    background:#ffdd30;
+    color:#ffffff;
+    border:none;
 }
 .order_result .wrap_btns>div>a{
     display: block;
 }
-
+.order_result .wrap_content {
+    background-color: #edeff2;
+}
 .order_result .wrap_content .wrap_line{
-    background: -webkit-gradient(linear, 0 0, 0 100, from(#d8d8d8), to(#d8d8d8) ) no-repeat 0 50%;
-    background-size: 100% 1px;
+    /*background: -webkit-gradient(linear, 0 0, 0 100, from(#d8d8d8), to(#d8d8d8) ) no-repeat 0 50%;*/
+    background: url(../imgs/saperate_line.png) no-repeat center;
+    background-size: 239px;
     text-align: center;
-    margin:0 10px;
+    margin:20px 10px 0 10px;
 }
 .order_result .wrap_content .wrap_line p{
-    font-size:15px;
+    font-size:14px;
     color:#9b9b9b;
     text-align:center;
-    background-color: #fff;
     display: inline-block;
     padding: 10px 20px 10px 10px;
 }
@@ -1332,6 +1342,7 @@ header .swiper_img{
     overflow: hidden;
     text-overflow: ellipsis;
     padding:10px;
+    background-color: #fff;
 }
 .order_result .goods_list .wrap_info h3{
     font-weight: normal;
