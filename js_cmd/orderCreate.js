@@ -765,6 +765,14 @@ define(function(require,exports,module){
                 if(v){
                     timeArr=JSON.parse(v);
                     eles.currTime=timeArr;
+                    eles.getCoupons();
+                    // reinit Coupones
+                    if(eles.currCoupon){
+                        var emptyConpon = {
+                            "couponName":"请重新选择优惠券"
+                        }
+                        eles.currCoupon = emptyConpon;
+                    }
                 }
 
                 history.go(-1);
