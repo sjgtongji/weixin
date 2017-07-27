@@ -1545,15 +1545,30 @@ header .swiper_img{
     border-width:0 0 1px 0;
     font-size: 18px;
 }
-.orderDetail .order_info .rider_info .icon_tel{
-    background-position: 0 -760px;
-    margin-right: -11px;
+.orderDetail .order_info .rider_info .icon_tel_yellow{
+    /*background-position: 0 -760px;*/
+    background: url(../imgs/i_tel_yellow.png) no-repeat 50% 50%;
+    -webkit-background-size:20px auto;
+    background-size:20px auto;
+    margin-right: -13px;
 }
-.orderDetail .order_info .shop_info .icon_tel{
-    background-position: 0 -760px;
+.orderDetail .order_info .shop_info .icon_share_yellow{
+    /*background-position: 0 -760px;*/
+    background: url(../imgs/i_share_yellow.png) no-repeat 50% 50%;
+    -webkit-background-size:20px auto;
+    background-size:20px auto;
     position: absolute;
     top:10px;
     right:0;
+}
+.orderDetail .order_info .shop_info .icon_tel_yellow{
+    /*background-position: 0 -760px;*/
+    background: url(../imgs/i_tel_yellow.png) no-repeat 50% 50%;
+    -webkit-background-size:20px auto;
+    background-size:20px auto;
+    position: absolute;
+    top:10px;
+    right:35px;
 }
 .orderDetail .order_info .goods_info{
     line-height: 40px;
