@@ -621,7 +621,8 @@ define(function(require,exports,module){
 
             eles.getAddress();
 
-            eles.getCoupons();
+            // moved to initEvent()
+            //eles.getCoupons();
 
             $.ajax({
                 url:APP.urls.IsRequiredVerification,
@@ -730,6 +731,8 @@ define(function(require,exports,module){
 
 
             refreshDeliveryTime();
+            // moved form initView()
+            eles.getCoupons();
 
             $eles.deliverTime.on("click",function(){
                 eles.timeSelect.show();
