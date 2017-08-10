@@ -592,8 +592,10 @@ define(function(require,exports,module){
                             location.href=[APP.urls.orderResult,"?id=",eles.orderId].join("");
                         }else if (res.err_msg == "get_brand_wcpay_request:cancel") {
                             // 支付取消
-                            // 跳转地址也许有问题
-                            location.href=[APP.urls.goods,"?shopId=",eles.resId].join("");
+                            // 清空购物车
+                            sessionStorage.setItem("shop_cart","");
+                            // 跳转至商店页
+                            location.href=APP.urls.shopList;
                         }else{
 
                         }
