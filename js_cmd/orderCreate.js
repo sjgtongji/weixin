@@ -595,7 +595,16 @@ define(function(require,exports,module){
                             // 清空购物车
                             sessionStorage.setItem("shop_cart","");
                             // 跳转至商店页
-                            location.href=APP.urls.shopList;
+                            var payCancelAlert = alert("取消支付需要重新下单。",{
+                                callBack:function(evt){
+                                    var that = this,ele = null;
+                                    if(evt && (ele = evt.target) && ("BUTTON" == ele.tagName)){
+                                        location.href=APP.urls.shopList;
+                                        that.close();
+                                    }
+                                    return that;
+                                }
+                            });
                         }else{
 
                         }
