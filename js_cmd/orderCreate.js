@@ -599,7 +599,8 @@ define(function(require,exports,module){
                                 callBack:function(evt){
                                     var that = this,ele = null;
                                     if(evt && (ele = evt.target) && ("BUTTON" == ele.tagName)){
-                                        location.href=APP.urls.shopList;
+                                        //location.href=APP.urls.shopList;
+                                        history.go(-1);
                                         that.close();
                                     }
                                     return that;
