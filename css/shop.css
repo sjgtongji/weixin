@@ -1518,14 +1518,14 @@ header .swiper_img{
     left:100%;
 }
 .orderDetail .wrap_process ul li.on{
-    color: #ffdd30;
+    color: #000000;
 }
 .orderDetail .wrap_process ul li.on .line:after{
-    background-color: #ffdd30;
+    background-color: #000000;
     border:2px solid #eeeeec;
     margin-left:-4px;
     bottom:-4px;
-    box-shadow: 0 0 0 1px #ffdd30;
+    box-shadow: 0 0 0 1px #000000;
 }
 
 .orderDetail .wrap_content{
@@ -1623,7 +1623,7 @@ header .swiper_img{
     height: 40px;
     line-height: 40px;
     font-size: 18px;
-    color: #ffdd30;
+    color: #000000;
 }
 .orderDetail .transport_info{
     margin-top: 10px;
